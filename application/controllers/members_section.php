@@ -22,7 +22,6 @@ class Members_section extends CI_Controller {
 
 	public function is_logged_in() {
 		$is_logged_in = $this->session->userdata('is_logged_in');
-		$user_id = $this->session->set_userdata('user_id');
 
 		if(!isset($is_logged_in) || $is_logged_in != true) {
 			redirect('login');

@@ -1,6 +1,5 @@
 .DS_Store
-!texte.txt
-
+.sass-cache
 
 application/cache/*
 !application/cache/index.html
