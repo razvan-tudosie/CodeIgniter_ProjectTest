@@ -27,8 +27,8 @@ echo '</pre>';
 		<tbody>
 			<?php foreach ($ideas as $idea) : ?>
 				<tr>
-					<td><?php echo $idea->id; ?></td>
-					<td><?php echo $idea->user_id; ?></td>
+					<td><?php echo $idea->idea_id; ?></td>
+					<td><?php echo $idea->idea_user_id; ?></td>
 					<td><?php echo $idea->idea; ?></td>
 					<td><?php echo $idea->idea_description; ?></td>
 					<td><?php echo $idea->impact; ?></td>
@@ -37,7 +37,7 @@ echo '</pre>';
 					<td><?php echo $idea->vision; ?></td>
 					<td><?php echo $idea->score; ?></td>
 					<td>
-						<?php echo anchor("members_section/delete_idea/$idea->id", 'delete idea'); ?>
+						<?php echo anchor("members_section/delete_idea/$idea->idea_id", 'delete idea'); ?>
 					</td>
 				</tr>
 			<?php endforeach; ?>

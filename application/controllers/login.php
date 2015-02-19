@@ -17,21 +17,20 @@ class Login extends CI_controller {
 	public function validate_credentials() {
 		$this->load->model('membership_model');
 		$query = $this->membership_model->validate();
-	
+
 		//if user credentials validate
-		if($query) {
+		if($query > 0) {
 			$data = array(
 				'username' => $this->input->post('username'),
-				'is_logged_in' => true
+				'is_logged_in' => true,
+				'user_id' => $this->membership_model->validate('user_id')
 			);
 
 			$this->session->set_userdata($data);
 			redirect('members_section');
 
 		} else {
-
 			$this->index();
-
 		}
 	}
 
@@ -84,7 +83,6 @@ class Login extends CI_controller {
 
 		if($query = $this->membership_model->member_check()) {
 			$this->form_validation->set_message('member_exists', 'The %s field exists');
-
 			return FALSE;
 		
 		}else{
