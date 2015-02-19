@@ -9,12 +9,13 @@ class Login extends CI_controller {
 		$data = array(
                'loggedIn' => $loggedIn,
                'main_content' => 'login_form'
-          );
+        );
 
 		$this->load->view('includes/template', $data);
 	}
 
 	public function validate_credentials() {
+
 		$this->load->model('membership_model');
 		$query = $this->membership_model->validate();
 
