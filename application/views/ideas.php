@@ -35,7 +35,9 @@ echo '</pre>';
 					<td><?php echo $idea->effort; ?></td>
 					<td><?php echo $idea->profitability; ?></td>
 					<td><?php echo $idea->vision; ?></td>
-					<td><?php echo $idea->score; ?></td>
+					<td>
+						<?php echo $idea->score; ?>
+					</td>
 					<td>
 						<?php echo anchor("members_section/delete_idea/$idea->idea_id", 'delete idea'); ?>
 					</td>

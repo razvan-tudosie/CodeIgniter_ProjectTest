@@ -1,9 +1,17 @@
 <?php
 
 class Ideas_model extends CI_model {
-	public function get_ideas() {
-		$query = $this->db->get('ideas');
-		return $query->result();
+	public function get_ideas($user_id_ideas) {
+		
+		$query = $this->db->get_where('ideas', array('idea_user_id' => $user_id_ideas));
+		
+		if ($query->num_rows() > 0) {
+			return $query->result();
+		} else {
+			return false;
+		}
+
+		
 	}
 
 	public function add_idea($ideaData) {
@@ -17,7 +25,7 @@ class Ideas_model extends CI_model {
 	}
 
 	public function delete_idea() {
-		$this->db->where("id", $this->uri->segment(3));
+		$this->db->where("idea_id", $this->uri->segment(3));
 		$this->db->delete('ideas');
 	}
 }

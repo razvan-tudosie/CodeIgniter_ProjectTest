@@ -12,33 +12,26 @@ class Members_section extends CI_Controller {
 		$data = array();
 		$this->load->model('Ideas_model');
 
-		if($query = $this->Ideas_model->get_ideas()) {
+		if($query = $this->Ideas_model->get_ideas($this->session->userdata('user_id'))) {
 			$data['ideas'] = $query;
 		}
 
-		$data['main_content'] = 'ideas';		
+		$data['main_content'] = 'ideas';
+			
 		$this->load->view('includes/template', $data);
-	}
-
-	public function is_logged_in() {
-		$is_logged_in = $this->session->userdata('is_logged_in');
-
-		if(!isset($is_logged_in) || $is_logged_in != true) {
-			redirect('login');
-		}
 	}
 
 	// add ideas in list
 	public function add_idea() {
 		$ideaData = array(
+			'idea_user_id' => $this->session->userdata('user_id'),
 			'idea' => $this->input->post('title'),
 			'idea_description' => $this->input->post('description'),
 			'impact' => $this->input->post('impact'),
 			'effort' => $this->input->post('effort'),
 			'profitability' => $this->input->post('profitability'),
 			'vision' => $this->input->post('vision'),
-			'score' => $this->input->post('score'),
-			'idea_user_id' => $this->session->userdata('user_id')
+			'score' => 	$this->input->post('impact') + $this->input->post('effort') + $this->input->post('profitability') + $this->input->post('vision')
 		);
 
 		$this->load->model('Ideas_model');
