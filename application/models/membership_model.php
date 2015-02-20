@@ -1,27 +1,47 @@
 <?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Membership_model extends CI_model {
 
-	// Login validation
-	public function validate() {
-		$this->db->where('username', $this->input->post('username'));
-		$this->db->where('password', md5($this->input->post('password')));
+class Membership_model extends CI_Model {
 
-		$query = $this->db->get('users');
+	public function get_user($username, $password) {
 
-		if($query->num_rows == 1) {
+		$query = $this->db->get_where('users', array('username' => $username));
+
+		if ($query->num_rows() > 0) {
+			$query = $query->row_array();
+
+			// assign variable to set in userdata session
+			$user_name = $query['username'];
+			$user_password = $query['password'];
+			$user_id = $query['user_id'];
+			$user_email = $query['email_address'];
 			
-			// return user id to save in session and validate that tha user exists in db
-			$query = $this->db->get_where('users', array('username' => $this->input->post('username')));
 
-			foreach ($query->result() as $row) {
-		        $user_id = $row->user_id;
-		    }
+			// second verification for security
+			if ($username === strtolower($user_name)) {
 
-		    return $user_id;
+				$password = md5($password);
+				if ($password != $user_password) {
+				
+					return false;
+				
+				} else {
+					$userdata = array(
+						'username' => $user_name,
+						'user_id' => $user_id,
+						'user_email' => $user_email
+					);
+					$this->session->set_userdata($userdata);
+					return true;
+				}
+			}
+		} else {
+			return false;
 		}
 
 	}
+
 
 	// create new member and add it to database
 	public function create_member() {
@@ -39,7 +59,7 @@ class Membership_model extends CI_model {
 
 	}
 
-
+	// cheack on create if member exists
 	public function member_check() {
 		$this->db->where('username', $this->input->post('username'));
 		$this->db->or_where('email_address', $this->input->post('email_address'));

@@ -2,11 +2,20 @@
 	<h1>Login form</h1>
 	<?php
 
-		echo form_open('login/validate_credentials');
-		echo form_input('username', 'Username');
-		echo form_password('password', 'Password');
+		if (!empty($error_message)) {
+			echo '<span style="color:red;">' .$error_message. '</span>';
+		};
+
+		echo form_open('login');
+
+		echo form_input('username', '');
+		echo form_error('username');
+
+		echo form_password('password', '');
+		echo form_error('password');
+
 		echo form_submit('submint', 'Login');
-		echo anchor('login/signup', 'Create Account');
+		echo anchor('signup', 'Create Account');
 
 	?>
 </div>
