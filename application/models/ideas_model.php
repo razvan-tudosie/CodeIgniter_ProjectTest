@@ -1,4 +1,5 @@
 <?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Ideas_model extends CI_model {
 	public function get_ideas($user_id_ideas) {
@@ -10,8 +11,6 @@ class Ideas_model extends CI_model {
 		} else {
 			return false;
 		}
-
-		
 	}
 
 	public function add_idea($ideaData) {

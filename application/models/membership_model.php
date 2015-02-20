@@ -41,12 +41,11 @@ class Membership_model extends CI_Model {
 		} else {
 			return false;
 		}
-
 	}
 
 
 	// create new member and add it to database
-	public function create_member() {
+	public function add_member() {
 
 		$new_member_insert_data = array(
 			'first_name' => $this->input->post('first_name'),
@@ -61,17 +60,4 @@ class Membership_model extends CI_Model {
 
 	}
 
-	// cheack on create if member exists
-	public function member_check() {
-		$this->db->where('username', $this->input->post('username'));
-		$this->db->or_where('email_address', $this->input->post('email_address'));
-		
-	    $query = $this->db->get('users');
-	    if ($query->num_rows() > 0){
-	        return true;
-	    }
-	    else{
-	        return false;
-	    }
-	}
 }

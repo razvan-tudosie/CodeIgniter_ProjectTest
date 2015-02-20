@@ -8,10 +8,10 @@
 
 		echo form_open('login');
 
-		echo form_input('username', '');
+		echo form_input('username', 'Username');
 		echo form_error('username');
 
-		echo form_password('password', '');
+		echo form_password('password', 'Password');
 		echo form_error('password');
 
 		echo form_submit('submint', 'Login');

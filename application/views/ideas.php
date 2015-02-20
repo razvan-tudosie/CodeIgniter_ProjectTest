@@ -57,38 +57,54 @@ echo '</pre>';
 <div style="width:45%; float:left;">
 	<h2>Add ideea</h2>
 
+	<?php echo validation_errors(); ?>
+
 	<?php echo form_open('members_section/add_idea'); ?>
-
+	
 	<p>
-		<label for="title">Title</label>
-		<input type="text" name="title" id="title">
+		<?php
+			echo form_label('Title', 'title');
+			echo form_input('title');
+		?>
 	</p>
 
 	<p>
-		<label for="description">Description</label>
-		<textarea name="description" id="description" cols="30" rows="10"></textarea>
+		<?php
+			echo form_label('Description', 'description');
+			echo form_textarea('description');
+		?>
+	</p>
+
+
+	<p>
+		<?php
+			echo form_label('Impact', 'impact');
+			echo form_input('impact');
+		?>
 	</p>
 
 	<p>
-		<label for="impact">impact</label>
-		<input type="text" name="impact" id="impact">
+		<?php
+			echo form_label('Effort', 'effort');
+			echo form_input('effort');
+		?>
 	</p>
 
 	<p>
-		<label for="effort">effort</label>
-		<input type="text" name="effort" id="effort">
+		<?php
+			echo form_label('Profitability', 'profitability');
+			echo form_input('profitability');
+		?>
 	</p>
 
 	<p>
-		<label for="profitability">profitability</label>
-		<input type="text" name="profitability" id="profitability">
-	</p>
-	<p>
-		<label for="vision">vision</label>
-		<input type="text" name="vision" id="vision">
+		<?php
+			echo form_label('Vision', 'vision');
+			echo form_input('vision');
+		?>
 	</p>
 
-	<input type="submit" value="submit">
+	<?php echo form_submit('submint', 'Submit'); ?>
 
 	<?php echo form_close(); ?>
 </div>
