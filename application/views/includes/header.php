@@ -16,11 +16,10 @@
 			
 		</li>
 
-		<?php if($this->session->userdata('is_logged_in')): ?>
-		    <li>Salut <?php echo $this->session->userdata('username'); ?> <a href="<?php echo base_url(); ?>logout">Logout</a></li>
+		<?php if($this->session->userdata('username')): ?>
+		    <li>Salut <?php echo $this->session->userdata('first_name'); ?> <a href="<?php echo base_url(); ?>logout">Logout</a></li>
 		<?php else: ?>
 		    <li><a href="<?php echo base_url(); ?>login">Login</a></li>
-		    <li><a href="<?php echo base_url(); ?>logout">Logout</a></li>
 		<?php endif; ?>
 	
 	</ul>

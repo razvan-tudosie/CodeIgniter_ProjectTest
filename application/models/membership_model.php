@@ -16,6 +16,7 @@ class Membership_model extends CI_Model {
 			$user_password = $query['password'];
 			$user_id = $query['user_id'];
 			$user_email = $query['email_address'];
+			$user_first_name = $query['first_name'];
 			
 
 			// second verification for security
@@ -30,7 +31,8 @@ class Membership_model extends CI_Model {
 					$userdata = array(
 						'username' => $user_name,
 						'user_id' => $user_id,
-						'user_email' => $user_email
+						'user_email' => $user_email,
+						'first_name' => $user_first_name
 					);
 					$this->session->set_userdata($userdata);
 					return true;
