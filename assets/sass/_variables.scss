@@ -1,8 +1,7 @@
+// Base Steup
 $baseFontSize: 14px;
-
-// Typo
-h1 {font-size: 1.8em;}
-h2 {font-size: 1.5em;}
+$baseFontFamily: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$baselineHeight: 18px;
 
 // Grid Variables
 $totalColumns: 12;
@@ -11,7 +10,9 @@ $columnWidth: 4em;
 $containerPadding: 1em;
 
 // Color Theme
-$mainColor: #2E0927	;
+$bodyColor: #f0f0f0;
+
+$mainColor: #2E0927;
 $firstColor: #D90000;
 $secondColor: #FF2D00;
 $thirdColor: #FF8C00;

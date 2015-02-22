@@ -5,14 +5,20 @@
 @import "variables";
 @import "mixins";
 @import "grid";
+@import "typo";
 
 
 * {margin: 0px; padding:0px;}
 
 body {
-	background: #b6b6b6;
+	background: $bodyColor;
 	font-size: $baseFontSize;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: $baseFontFamily;
+	line-height: $baselineHeight;
+}
+
+div.card {
+	@include card-default;
 }
 
 // The Container that centers the grid and adds padding on either side.

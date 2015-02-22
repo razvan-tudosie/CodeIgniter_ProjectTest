@@ -7,9 +7,11 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template', $data);
 	}
 
-	public function logout() {
-	    $this->session->unset_userdata('is_logged_in');
-	    session_destroy();
-	    redirect('site');
+
+	public function styleguide() {
+		$data['main_content'] = 'styleguide';
+		$this->load->view('includes/template', $data);
 	}
+
+
 }

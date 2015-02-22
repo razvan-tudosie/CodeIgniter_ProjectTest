@@ -15,12 +15,14 @@
 				<h1>My Project Idea</h1>
 				<h2>The best way to keep your ideas</h2>
 			</a>
-
 		</div>
 
 
 		<ul class="topNav">
 			<?php if($this->session->userdata('username')): ?>
+				<li>
+					<a class="sectionLink" href="<?php echo base_url(); ?>site/styleguide">Styleguide</a>
+				</li>
 				<li>
 					<a class="sectionLink" href="<?php echo base_url(); ?>members_section">My ideas</a>
 				</li>
@@ -33,7 +35,7 @@
 					</a>
 				</li>
 			<?php else: ?>
-			    <li><a class="sectionLink" href="<?php echo base_url(); ?>login"></a></li>
+			    <li><a class="sectionLink" href="<?php echo base_url(); ?>login">Login</a></li>
 			<?php endif; ?>
 		
 		</ul>
