@@ -7,22 +7,40 @@
 </head>
 <body>
 
-<nav>
-	<ul>
+<header class="row">
+	<nav>
 
-		<li><a href="<?php echo base_url(); ?>">home</a></li>
-		<li>
-			<a href="<?php echo base_url(); ?>members_section">Members area</a>
-			
-		</li>
+		<div class="span3 brand">
+			<a class="brand" href="<?php echo base_url(); ?>">
+				<h1>My Project Idea</h1>
+				<h2>The best way to keep your ideas</h2>
+			</a>
 
-		<?php if($this->session->userdata('username')): ?>
-		    <li>Salut <?php echo $this->session->userdata('first_name'); ?> <a href="<?php echo base_url(); ?>logout">Logout</a></li>
-		<?php else: ?>
-		    <li><a href="<?php echo base_url(); ?>login">Login</a></li>
-		<?php endif; ?>
+		</div>
+
+
+		<ul class="topNav">
+			<?php if($this->session->userdata('username')): ?>
+				<li>
+					<a class="sectionLink" href="<?php echo base_url(); ?>members_section">My ideas</a>
+				</li>
+			    <li>
+			    	Salut <?php echo $this->session->userdata('first_name'); ?> <a href="<?php echo base_url(); ?>logout">Logout</a>
+			    </li>
+				<li>
+					<a class="btn round addIdea" href="javascript:;">
+						<img src="<?php echo base_url(); ?>assets/images/bt_speed_dial_2x.png" alt="add idea">
+					</a>
+				</li>
+			<?php else: ?>
+			    <li><a class="sectionLink" href="<?php echo base_url(); ?>login"></a></li>
+			<?php endif; ?>
+		
+		</ul>
+	</nav>
 	
-	</ul>
-</nav>
+</header>
 
-<div class="content">
+<div class="container">
+
+

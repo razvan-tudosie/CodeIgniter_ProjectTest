@@ -18,11 +18,6 @@ class Ideas_model extends CI_model {
 		return;
 	}
 
-	public function update_idea($ideaData) {
-		$this->db->where("id", 2);
-		$this->db->update("ideas", $ideaData);
-	}
-
 	public function delete_idea() {
 		$this->db->where("idea_id", $this->uri->segment(3));
 		$this->db->delete('ideas');
