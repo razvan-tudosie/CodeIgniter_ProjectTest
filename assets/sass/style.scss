@@ -6,6 +6,7 @@
 @import "mixins";
 @import "grid";
 @import "typo";
+@import "elements";
 
 
 * {margin: 0px; padding:0px;}
@@ -19,6 +20,10 @@ body {
 
 div.card {
 	@include card-default;
+
+	.card-content {
+		padding: $baseFontSize;
+	}
 }
 
 // The Container that centers the grid and adds padding on either side.
@@ -35,7 +40,7 @@ header {
 	padding-bottom: 20px;
 
 	a.brand {
-		color:#fff;
+		color:#000;
 		text-decoration: none;
 
 		h2 {
@@ -45,11 +50,12 @@ header {
 	}
 
 	nav{
-		background-color:$mainColor;
+		background-color:#fff;
 		display: block;
 		width:100%;
 		float:right;
-		color: #fff;
+		color: #000;
+		border-bottom: 1px solid #ddd;
 
 		ul.topNav {
 			float:right;
@@ -60,41 +66,13 @@ header {
 
 				a.sectionLink {
 					padding: 8px;
-					color: #fff;
-					text-decoration: none;
-					display:block;
-					background-color: $secondColor;
-					@include border-radius(3px);
-
-					&:hover {
-						background-color: darken($secondColor, 10%);
-					}
+					color: #fff;					
 				}
 			}
+
 		}
 	}
 }
-
-.btn {
-	background-color: $secondColor;
-	display:inline-block;
-	box-sizing: content-box;
-	padding:5px;
-
-	&.round{
-		@include border-radius(50%);
-
-		img {
-			width: 20px;
-			height: 20px;
-			color: #fff;
-			background-size: 24px;
-			display: block;
-			-webkit-user-drag: none;
-		}
-	}
-}
-
 
 
 #login_form {
@@ -103,7 +81,7 @@ header {
 	border:1px solid #fff;
 	margin: 250px auto 0;
 	padding:1em;
-	@include border-radius(3px, 3px);
+	@include border-radius($baseRadius);
 }
 
 fieldset {
@@ -112,7 +90,7 @@ fieldset {
 	border:1px solid #fff;
 	margin: 0 auto 0;
 	padding:1em;
-	@include border-radius(3px, 3px);
+	@include border-radius($baseRadius);
 
 	& legend {
 		font-weight: bold;
@@ -125,7 +103,7 @@ input[type=text], input[type=password] {
 	width: 280px;
 	padding: 10px;
 	margin-bottom: 10px;
-	@include border-radius(3px, 3px);
+	@include border-radius($baseRadius);
 	border:0;	
 }
 
@@ -135,7 +113,7 @@ input[type=submit], form a {
 	padding:6px;
 	text-decoration: none;
 	font-size:12px;
-	@include border-radius(3px, 3px);
+	@include border-radius($baseRadius);
 	cursor: pointer;
 	background: #348075;
 	color:#fff;
@@ -157,14 +135,6 @@ fieldset {
 }
 
 
-
-table {
-	$table-color: #7a98c6;
-	@include table-scaffolding;
-	@include inner-table-borders(1px, darken($table-color, 40%));
-	@include outer-table-borders(2px);
-	@include alternating-rows-and-columns($table-color, adjust-hue($table-color, -120deg), #222222);
-}
 
 
 form label, form input {display: block;}

@@ -31,8 +31,8 @@ class Members_section extends CI_Controller {
 		$this->form_validation->set_rules('vision', 'Vision', 'less_than[5]|numeric|required|xss_clean');
 
 		if ($this->form_validation->run() == FALSE) {
-			$data['main_content'] = 'ideas';
-			$this->load->view('includes/template', $data);
+
+			echo json_encode(array('st'=>0, 'msg' => validation_errors()));
 
 		} else {
 
@@ -49,7 +49,8 @@ class Members_section extends CI_Controller {
 
 			$this->load->model('Ideas_model');
 			$this->Ideas_model->add_idea($ideaData);
-			redirect('members_section');
+
+			echo json_encode(array('st'=>1, 'msg' => 'Successfully Submiited'));
 		}
 	}
 

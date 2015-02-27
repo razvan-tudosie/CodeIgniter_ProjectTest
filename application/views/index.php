@@ -5,8 +5,10 @@
 ?>
 
 <div class="row">
-	<div class="span12">
-		<h1>Homepage</h1>
-		<p>This page is underconstruction</p>
+	<div class="span12 card">
+		<div class="card-content">
+			<h1>Homepage</h1>
+			<p>This page is underconstruction</p>
+		</div>
 	</div>
 </div>

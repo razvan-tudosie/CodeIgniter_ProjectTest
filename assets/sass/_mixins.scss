@@ -19,3 +19,17 @@
 	margin-bottom: 1em;
 	@include border-radius(5px);
 }
+
+@mixin btn-default ($color, $textColor) {
+	background-color: $color;
+	color: $textColor;
+	display:inline-block;
+	box-sizing: content-box;
+	padding:8px;
+	@include border-radius(3px);
+	text-decoration: none;
+
+	&:hover {
+		background-color: darken($color, 10%);
+	}
+}

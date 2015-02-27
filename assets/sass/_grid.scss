@@ -8,9 +8,6 @@ $rowWidth: ($totalColumns * $columnWidth) + ($gutterWidth * ($totalColumns - 1))
 $rowWidthFluid: ($totalColumns * $columnWidth) + ($gutterWidth * ($totalColumns));
 
 
-
-
-
 .row {
 	@include clear;
 	// use a negative margin on the parent row so we don't have to bother with omegas or nth-childs
