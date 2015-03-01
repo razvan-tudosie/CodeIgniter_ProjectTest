@@ -4,12 +4,22 @@
 	<meta charset="UTF-8">
 	<title>Project Idea</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.fancybox.css" />
 </head>
 <body>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+  </div>
+</nav>
+
 <header class="row">
 	<nav>
-
 		<div class="span3 brand">
 			<a class="brand" href="<?php echo base_url(); ?>">
 				<span style="font-size:18px;"><strong>Project Idea</strong></span>

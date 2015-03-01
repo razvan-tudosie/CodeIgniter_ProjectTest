@@ -8,16 +8,15 @@ $( ".dropdown" ).click(function() {
 });
 
 
-
-
 $(document).ready(function() {
 
-	$('#ideaForm').submit(function(){
+	// ajax idea form submit
+	$('.ideaForm').submit(function(){
 		
 		$.ajax({
 			type: "POST",
-			url: $('#ideaForm').attr('action'),
-			data: $('#ideaForm').serialize(),
+			url: $('.ideaForm').attr('action'),
+			data: $('.ideaForm').serialize(),
 			dataType: "json"
 		})
 
