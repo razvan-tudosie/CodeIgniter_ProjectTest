@@ -1,22 +1,12 @@
-$( "a.addIdea" ).click(function() {
-	$( "div.ideaForm" ).toggle();
-});
-
-// dropdown menu toggle
-$( ".dropdown" ).click(function() {
-	$(this).toggleClass( "open" );
-});
-
-
 $(document).ready(function() {
 
 	// ajax idea form submit
-	$('.ideaForm').submit(function(){
+	$('#ideaForm').submit(function(){
 		
 		$.ajax({
 			type: "POST",
-			url: $('.ideaForm').attr('action'),
-			data: $('.ideaForm').serialize(),
+			url: $('#ideaForm').attr('action'),
+			data: $('#ideaForm').serialize(),
 			dataType: "json"
 		})
 
@@ -28,11 +18,11 @@ $(document).ready(function() {
 			
 			} else if(resp.st == 1) {
 
-			  //$('#validation-error').html(data.msg);
-				window.location.reload();
-			
+			  	$('#validation-error').html(data.msg);
+				//window.location.reload();
+
 			}
-					
+
 		});
 		
 		return false;
