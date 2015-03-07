@@ -13,48 +13,42 @@
 				
 				<p>
 					<?php
-						echo form_label('Title', 'title');
-						echo form_input('title');
+						echo form_input('title','',"placeholder='Title'");
 					?>
 				</p>
 
 				<p>
 					<?php
-						echo form_label('Description', 'description');
-						echo form_textarea('description');
+						echo form_textarea('description','',"placeholder='Description'");
 					?>
 				</p>
 
 
 				<p>
 					<?php
-						echo form_label('Impact', 'impact');
-						echo form_input('impact');
+						echo form_input('impact','',"placeholder='Impact'");
 					?>
 				</p>
 
 				<p>
 					<?php
-						echo form_label('Effort', 'effort');
-						echo form_input('effort');
+						echo form_input('effort','',"placeholder='Effort'");
 					?>
 				</p>
 
 				<p>
 					<?php
-						echo form_label('Profitability', 'profitability');
-						echo form_input('profitability');
+						echo form_input('profitability','',"placeholder='Profitability'");
 					?>
 				</p>
 
 				<p>
 					<?php
-						echo form_label('Vision', 'vision');
-						echo form_input('vision');
+						echo form_input('vision','',"placeholder='Vision'");
 					?>
 				</p>
 
-				<?php echo form_submit('submint', 'Submit'); ?>
+				<?php echo form_submit('submint', 'Submit',"class='btn'"); ?>
 
 				<?php echo form_close(); ?>
 

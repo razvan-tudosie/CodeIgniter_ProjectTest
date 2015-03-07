@@ -7,15 +7,15 @@
 <?php // echo validation_errors(); ?>
 
 
-<div class="row">
-	<div class="span12 card">
-		<div class="card-content">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
 			
 		<h1>My ideas</h1>
 		<br />
 
-		<?php if(isset($ideas)) : ?> 
-			<table>
+			<?php if(isset($ideas)) : ?> 
+			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
 					<!-- 				
@@ -28,7 +28,7 @@
 						<th>Effort</th>
 						<th>Profitability</th>
 						<th>Vision</th>
-						<th>Total</th>
+						<th>Score</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -64,8 +64,3 @@
 		</div>
 	</div>
 </div>
-
-
-<br /><br /><br /><br /><br />
-
-

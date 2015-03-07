@@ -8,7 +8,7 @@
 <body>
 
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-static-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -18,7 +18,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="<?php echo base_url(); ?>">
-				Projects Ideas - The best way to keep your ideas
+				Projects Ideas
 			</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
@@ -26,7 +26,7 @@
 
 				<?php if($this->session->userdata('username')): ?>
 				    <li class="dropdown">
-				    	<a href="javascript:;" id="usermenu" data-toggle="dropdown" aria-expanded="true">
+				    	<a class="nav-link" href="javascript:;" id="usermenu" data-toggle="dropdown" aria-expanded="true">
 				    		Hello <?php echo $this->session->userdata('first_name'); ?>
 				    	</a>
 
@@ -42,7 +42,7 @@
 				    </li>
 
 					<li>
-						<a href="#myModal" data-toggle="modal">
+						<a class="nav-link" href="#myModal" data-toggle="modal">
 							Add New Idea
 						</a>
 					</li>
@@ -53,14 +53,6 @@
 				<?php endif; ?>
 
 			</ul>
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search...">
-			</form>
 		</div>
 	</div>
 </nav>
-
-
-<div class="container">
-
-
