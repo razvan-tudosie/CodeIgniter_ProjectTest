@@ -1,8 +1,12 @@
-$(document).ready(function() {
 
+$(document).ready(function() {
+	//popover idea table
+	$('[data-toggle="popover"]').popover({
+	        placement : 'bottom',
+	});
+	
 	// ajax idea form submit
 	$('#ideaForm').submit(function(){
-		
 		$.ajax({
 			type: "POST",
 			url: $('#ideaForm').attr('action'),

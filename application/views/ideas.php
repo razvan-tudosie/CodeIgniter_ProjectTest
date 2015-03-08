@@ -12,6 +12,9 @@
 		<div class="col-md-12">
 			
 		<h1>My ideas</h1>
+
+		<p>In this matrix, you’ll list your ideas in the left-hand column and then score them on a scale of 1 to 5, with 5 being the highest. Granted, the scoring will be subjective, but since we’re looking for trends, it’s OK to estimate. Score your ideas according to these criteria:</p>
+		<p>Rank each item on a scale of 1 to 5 and then add them up in the right-hand column. Remember, you’re looking for trends. If you have to cut one project, cut the lowest one; if you can only take on one project, proceed with the highest one.</p>
 		<br />
 
 			<?php if(isset($ideas)) : ?> 
@@ -24,10 +27,37 @@
 					 -->					
 		 				<th>Idea</th>
 						<th>Description</th>
-						<th>Impact</th>
-						<th>Effort</th>
-						<th>Profitability</th>
-						<th>Vision</th>
+						<th>
+							<span class="info" data-toggle="popover"
+							title="Impact"
+							data-content="Overall, how much of an impact will this project make on your business and customers?">
+								Impact
+							</span>
+						</th>
+
+						<th>
+							<span class="info" data-toggle="popover"
+							title="Effort"
+							data-content="How much time and work will it take to create the project? (In this case, a lower score indicates more effort, so choose 1 for a project that requires a ton of work and 5 for a project that requires almost no work.)">
+								Effort
+							</span>
+
+						</th>
+						<th>
+							<span class="info" data-toggle="popover"
+							title="Profitability"
+							data-content="Relative to the other ideas, how much money will the project bring in?">
+								Profitability
+							</span>
+
+						</th>
+						<th>
+							<span class="info" data-toggle="popover"
+							title="Vision"
+							data-content="How close of a fit is this project with your overall mission and vision?">
+								Vision
+							</span>
+						</th>
 						<th>Score</th>
 						<th>Actions</th>
 					</tr>
