@@ -49,7 +49,7 @@
 							</li>
 						<?php else: ?>
 						    <li>
-						    	<a href="<?php echo base_url(); ?>login">Login</a>
+						    	<a class="nav-link" href="<?php echo base_url(); ?>login">Login</a>
 						    </li>
 						<?php endif; ?>
 
